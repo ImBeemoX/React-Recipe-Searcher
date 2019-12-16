@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
 .search-form{
@@ -27,4 +27,13 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.icon{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 45%;
 }

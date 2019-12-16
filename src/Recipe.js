@@ -13,7 +13,7 @@ const Recipe = ({title, calories, image, ingredients}) =>{
                     </li>
                 ))}
             </ol>
-             <p>{calories}</p>
+             <p>{`${Math.ceil(calories)} Cal`}</p>
             <img className={style.image} src={image} alt=""></img>
         </div>
     )
