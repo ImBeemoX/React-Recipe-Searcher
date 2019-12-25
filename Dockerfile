@@ -1,16 +1,25 @@
+#Dockerfile.dev:
+
 # base image
 FROM node:12.2.0-alpine
 
 # set working directory
-WORKDIR /app
+WORKDIR ./
 
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
+# add `//node_modules/.bin` to $PATH
+ENV PATH ./node_modules/.bin:$PATH
 
-# install and cache app dependencies
-COPY package.json /app/package.json
+COPY package.json ./package.json
+
+#use the minified build file for production, not now - npm start is for development.
+#COPY ./build/* ./public/ 
+
+#install dependencies:
 RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent
+RUN npm install react-scripts@3.0.1 -g 
 
-# start app
+#copy your project files: (also bad for development, use volume(https://docs.docker.com/storage/volumes/) instead)
+COPY . . 
+
+# start 
 CMD ["npm", "start"]
